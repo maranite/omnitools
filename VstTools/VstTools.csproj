@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{490739D6-F199-47BA-92BE-B98BABE10321}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VstTools</RootNamespace>
+    <AssemblyName>VstTools</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\VstTools.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Release\VstTools.xml</DocumentationFile>
+    <BaseAddress>4399360</BaseAddress>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Jacobi.Vst.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=9afb061aee7b7c84, processorArchitecture=MSIL">
+      <HintPath>..\packages\VST.NET.x64.1.1\lib\net40\Jacobi.Vst.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Jacobi.Vst.Framework, Version=1.1.0.0, Culture=neutral, PublicKeyToken=9afb061aee7b7c84, processorArchitecture=MSIL">
+      <HintPath>..\packages\VST.NET.x64.1.1\lib\net40\Jacobi.Vst.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Jacobi.Vst.Interop, Version=1.1.0.0, Culture=neutral, PublicKeyToken=9afb061aee7b7c84, processorArchitecture=AMD64">
+      <HintPath>..\packages\VST.NET.x64.1.1\lib\net40\Jacobi.Vst.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExtractOmnisphereSamples.cs" />
+    <Compile Include="ConvertSmprToBitwig.cs" />
+    <Compile Include="ConvertOmnisphereToBitwig.cs" />
+    <Compile Include="ConvertToBitwigPreset.cs" />
+    <Compile Include="ConvertToOmnisphereMulti.cs" />
+    <Compile Include="ExportOmnisphereFileSystem.cs" />
+    <Compile Include="ImportOmnisphereFileSystem.cs" />
+    <Compile Include="OpenOmnisphereMulti.cs" />
+    <Compile Include="OpenOmnispherePatch.cs" />
+    <Compile Include="PSCmdlet.cs" />
+    <Compile Include="GetPatchesFolder.cs" />
+    <Compile Include="GetPluginFolders.cs" />
+    <Compile Include="GetSteamFolder.cs" />
+    <Compile Include="OpenBitwigPreset.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SaveBitwigPreset.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\default_omn_mlt.mlt_omn" />
+    <None Include="Resources\Empty.mlt_omn">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\Synthmaster Template.bwpreset" />
+    <None Include="Resources\template.bwpreset" />
+    <None Include="Start-Debug.ps1" />
+    <None Include="Post-Build.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="VstTools\VstTools.psd1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="VstTools\VstTools.psm1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NAudio\NAudio.csproj">
+      <Project>{da4f02e3-0b5e-42cd-b8d9-5583fa51d66e}</Project>
+      <Name>NAudio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vst.Presets\Vst.Presets.csproj">
+      <Project>{5c529d74-40ff-4182-b57f-0fb33749e77b}</Project>
+      <Name>Vst.Presets</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utilities\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy RemoteSigned -command "&amp; '$(ProjectDir)Post-Build.ps1' -ProjectName '$(ProjectName)' -ConfigurationName '$(ConfigurationName)' -TargetDir '$(TargetDir)'"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\XmlDoc2CmdletDoc.0.2.10\build\XmlDoc2CmdletDoc.targets" Condition="Exists('..\packages\XmlDoc2CmdletDoc.0.2.10\build\XmlDoc2CmdletDoc.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\XmlDoc2CmdletDoc.0.2.10\build\XmlDoc2CmdletDoc.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\XmlDoc2CmdletDoc.0.2.10\build\XmlDoc2CmdletDoc.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoLogo -ExecutionPolicy RemoteSigned -command ". ..\..\Post-Build.ps1"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

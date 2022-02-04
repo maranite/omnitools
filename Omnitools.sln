@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BwsPresetTool", "BwsPresetTool\BwsPresetTool.csproj", "{2EEE96EB-67F0-4939-BDB9-876D685A9E87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VstTools", "VstTools\VstTools.csproj", "{490739D6-F199-47BA-92BE-B98BABE10321}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vst.Presets", "Vst.Presets\Vst.Presets.csproj", "{5C529D74-40FF-4182-B57F-0FB33749E77B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAudio", "NAudio\NAudio.csproj", "{DA4F02E3-0B5E-42CD-B8D9-5583FA51D66E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EEE96EB-67F0-4939-BDB9-876D685A9E87}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{2EEE96EB-67F0-4939-BDB9-876D685A9E87}.Debug|Any CPU.Build.0 = Debug|x64
+		{2EEE96EB-67F0-4939-BDB9-876D685A9E87}.Release|Any CPU.ActiveCfg = Release|x64
+		{2EEE96EB-67F0-4939-BDB9-876D685A9E87}.Release|Any CPU.Build.0 = Release|x64
+		{490739D6-F199-47BA-92BE-B98BABE10321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{490739D6-F199-47BA-92BE-B98BABE10321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{490739D6-F199-47BA-92BE-B98BABE10321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{490739D6-F199-47BA-92BE-B98BABE10321}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C529D74-40FF-4182-B57F-0FB33749E77B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C529D74-40FF-4182-B57F-0FB33749E77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C529D74-40FF-4182-B57F-0FB33749E77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C529D74-40FF-4182-B57F-0FB33749E77B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA4F02E3-0B5E-42CD-B8D9-5583FA51D66E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA4F02E3-0B5E-42CD-B8D9-5583FA51D66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA4F02E3-0B5E-42CD-B8D9-5583FA51D66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA4F02E3-0B5E-42CD-B8D9-5583FA51D66E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76C4D6B0-F495-445C-8ED9-A214B21BD89E}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://ethica.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BwsPresetTool\\BwsPresetTool.csproj
+		SccProjectName1 = BwsPresetTool
+		SccLocalPath1 = BwsPresetTool
+		SccProjectUniqueName2 = VstTools\\VstTools.csproj
+		SccProjectName2 = VstTools
+		SccLocalPath2 = VstTools
+		SccProjectUniqueName3 = Vst.Presets\\Vst.Presets.csproj
+		SccProjectName3 = Vst.Presets
+		SccLocalPath3 = Vst.Presets
+		SccProjectUniqueName4 = NAudio\\NAudio.csproj
+		SccProjectName4 = NAudio
+		SccLocalPath4 = NAudio
+	EndGlobalSection
+EndGlobal

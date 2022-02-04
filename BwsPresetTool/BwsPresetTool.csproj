@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2EEE96EB-67F0-4939-BDB9-876D685A9E87}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BwsPresetTool</RootNamespace>
+    <AssemblyName>BwsPresetTool</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Jacobi.Vst.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=fa678e13c1efc859, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\VST.NET.x64.1.1\lib\net40\Jacobi.Vst.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Jacobi.Vst.Framework, Version=1.1.0.0, Culture=neutral, PublicKeyToken=fa678e13c1efc859, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\VST.NET.x64.1.1\lib\net40\Jacobi.Vst.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Jacobi.Vst.Interop">
+      <HintPath>..\packages\VST.NET.x64.1.1\lib\net40\Jacobi.Vst.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ExtendedLinguisticServices, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Sensors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.Sensors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.1.1.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BitwigPresetSelecter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitwigPresetSelecter.Designer.cs">
+      <DependentUpon>BitwigPresetSelecter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bitwig\BitwigPreset.cs" />
+    <Compile Include="Bitwig\ChunkType.cs" />
+    <Compile Include="ByteUtils.cs" />
+    <Compile Include="SynthMasterPreset.cs" />
+    <Compile Include="TagInferer.cs" />
+    <Compile Include="VST\FxPreset.cs" />
+    <Compile Include="Bitwig\HeaderItem.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="VST\HostCommandStub.cs" />
+    <Compile Include="Bitwig\MetaItem.cs" />
+    <Compile Include="Bitwig\MetaTag.cs" />
+    <Compile Include="OmnispherePresetsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OmnispherePresetsForm.Designer.cs">
+      <DependentUpon>OmnispherePresetsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VST\IMetaData.cs" />
+    <Compile Include="VST\PluginCommandExtensions.cs" />
+    <Compile Include="VST\PresetException.cs" />
+    <Compile Include="VstPluginHost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VstPluginHost.Designer.cs">
+      <DependentUpon>VstPluginHost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VstPluginsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VstPluginsForm.Designer.cs">
+      <DependentUpon>VstPluginsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BitwigPresetSelecter.resx">
+      <DependentUpon>BitwigPresetSelecter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OmnispherePresetsForm.resx">
+      <DependentUpon>OmnispherePresetsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VstPluginHost.resx">
+      <DependentUpon>VstPluginHost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VstPluginsForm.resx">
+      <DependentUpon>VstPluginsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C529D74-40FF-4182-B57F-0FB33749E77B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vst.Presets</RootNamespace>
+    <AssemblyName>Vst.Presets</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Jacobi.Vst.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=9afb061aee7b7c84, processorArchitecture=MSIL">
+      <HintPath>..\packages\VST.NET.x64.1.1\lib\net40\Jacobi.Vst.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Jacobi.Vst.Framework, Version=1.1.0.0, Culture=neutral, PublicKeyToken=9afb061aee7b7c84, processorArchitecture=MSIL">
+      <HintPath>..\packages\VST.NET.x64.1.1\lib\net40\Jacobi.Vst.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Jacobi.Vst.Interop, Version=1.1.0.0, Culture=neutral, PublicKeyToken=9afb061aee7b7c84, processorArchitecture=AMD64">
+      <HintPath>..\packages\VST.NET.x64.1.1\lib\net40\Jacobi.Vst.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Log" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bitwig\BinaryReaderExtensions.cs" />
+    <Compile Include="Bitwig\BitwigPreset.cs" />
+    <Compile Include="Bitwig\BitwigtPresets.cs" />
+    <Compile Include="Bitwig\ChunkType.cs" />
+    <Compile Include="Bitwig\HeaderItem.cs" />
+    <Compile Include="Bitwig\MetaItem.cs" />
+    <Compile Include="Bitwig\MetaTag.cs" />
+    <Compile Include="NKS\NksfException.cs" />
+    <Compile Include="NKS\NksfWriter.cs" />
+    <Compile Include="NKS\PLID.cs" />
+    <Compile Include="Omnisphere\IOmnispherePatchOrMulti.cs" />
+    <Compile Include="Omnisphere\OmniConverters.cs" />
+    <Compile Include="Omnisphere\OmnisphereWavDecrypter.cs" />
+    <Compile Include="Omnisphere\OmnisphereXmlFile.cs" />
+    <Compile Include="Omnisphere\RiffChunk.cs" />
+    <Compile Include="Synthmaster\SynthMasterUtilities.cs" />
+    <Compile Include="Utilities\FileIOExtensions.cs" />
+    <Compile Include="Omnisphere\OmniMetaData.cs" />
+    <Compile Include="Omnisphere\OmniSoundSource.cs" />
+    <Compile Include="Omnisphere\OmnisphereArchiveFile.cs" />
+    <Compile Include="Omnisphere\OmnisphereArchiveWriter.cs" />
+    <Compile Include="Omnisphere\OmnisphereFile.cs" />
+    <Compile Include="Omnisphere\OmnisphereMulti.cs" />
+    <Compile Include="Omnisphere\OmnispherePatch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Synthmaster\SmprTagInferer.cs" />
+    <Compile Include="Synthmaster\SynthMasterPreset.cs" />
+    <Compile Include="Utilities\BinaryReaderExtensions.cs" />
+    <Compile Include="Utilities\BinaryWriterExtensions.cs" />
+    <Compile Include="Utilities\BitUtils.cs" />
+    <Compile Include="Utilities\ByteUtils.cs" />
+    <Compile Include="Utilities\DirectoryInfoUtils.cs" />
+    <Compile Include="Utilities\FileInfoExtensions.cs" />
+    <Compile Include="Utilities\ILookupExtensions.cs" />
+    <Compile Include="Utilities\KeyValueStringAdapter.cs" />
+    <Compile Include="Utilities\StreamExtensions.cs" />
+    <Compile Include="Utilities\StructUtilities.cs" />
+    <Compile Include="Utilities\SubStream.cs" />
+    <Compile Include="Utilities\XmlDocumentExtensions.cs" />
+    <Compile Include="VST\IFileFormatReader.cs" />
+    <Compile Include="VST\PresetConvert.cs" />
+    <Compile Include="VST\PresetException.cs" />
+    <Compile Include="VST\TemporaryFolder.cs" />
+    <Compile Include="Omnisphere\OmniUtilities.cs" />
+    <Compile Include="VST\VstFX.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\EmptyOmnisphereMulti.mlt_omn">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\Synthmaster Template.bwpreset" />
+    <None Include="Resources\OmnisphereTemplate.bwpreset" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NAudio\NAudio.csproj">
+      <Project>{da4f02e3-0b5e-42cd-b8d9-5583fa51d66e}</Project>
+      <Name>NAudio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
